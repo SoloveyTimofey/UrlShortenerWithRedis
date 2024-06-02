@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "XZbKS9vrui0Fp8c7DSav7G8K9Ik7Qf9unWsswmlEEJydFjFfL+ClRB4Sl7xBgTMLN4DyOAmFB6ZDUBB9+UihNA==",
+  "success": true,
+  "projectFilePath": "C:\\IT Learning\\Redis\\UrlShortenerWithRedis\\UrlShortenerWithRedis\\UrlShortenerWithRedis.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Тимофей\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Тимофей\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\Тимофей\\.nuget\\packages\\stackexchange.redis\\2.7.33\\stackexchange.redis.2.7.33.nupkg.sha512",
+    "C:\\Users\\Тимофей\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

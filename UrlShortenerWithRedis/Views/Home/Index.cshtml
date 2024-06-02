@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Redis URL Shortener";
+    Layout = "_Layout";
+}
+@model UrlShortenerViewModel
+
+<section class="container align-content-center justify-content-center">
+    <h2>Paste the URL to be shortened</h2>
+    <form asp-action="ShortenURL" asp-controller="Home" method="post">
+        <input class="input-group mt-2" asp-for="@Model.Url" id="inputURL" placeholder="Input URL here..." />
+        <button class="btn btn-primary mt-2" id="submitButton" type="submit">Shorten URL</button>
+    </form>
+    @if (Model.ErrorMessage != null)
+    {
+        <label class="alert-danger">@Model.ErrorMessage</label>
+    }
+    @if (Model.Url!=null&&Model.ShortenedUrl!=null)
+    {
+        <p class="mt-2">
+            Your long URL:
+            <a href="@Model.Url">@Model.Url</a>
+            <br/>
+            Is now:
+            <a href="@Model.ShortenedUrl">@Model.ShortenedUrl</a>
+        </p>
+    }
+
+    @if (Model.UrlKvps != null)
+    {
+        <h4 class="mt-5">Shortened URLs</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                   <th>Shortened</th>
+                   <th>Long</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (KeyValuePair<string, string> kvp in Model.UrlKvps)
+                {
+                    <tr>
+                        <td><a href="@CreateShortendUrl(kvp.Key)">@kvp.Key</a></td>
+                        <td><a href="@kvp.Value">@kvp.Value</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</section>
+
+@functions{
+    private string CreateShortendUrl(string shortened)
+    {
+        string scheme = Context.Request.Scheme;
+        string host = Context.Request.Host.Host;
+        int? port = Context.Request.Host.Port;
+
+        return $"{scheme}://{host}:{port}/{shortened}";
+    }
+}

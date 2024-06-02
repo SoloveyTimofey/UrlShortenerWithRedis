@@ -1,0 +1,20 @@
+﻿body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.myContainer {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 8px;
+}
+
+#inputURL{
+}
+
+#submitButton {
+}
